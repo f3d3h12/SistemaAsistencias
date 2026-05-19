@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Gestión de Usuarios";
+    ViewData["BodyClass"] = "gestion-page";
+}
+
+<div class="admin-banner">
+    ADMIN
+</div>
+
+<main class="main-container-gestion">
+    <div class="toolbar-container">
+        <div class="spacer"></div>
+
+        <div class="search-box">
+            <input type="text" id="inputBusqueda" placeholder="Buscar usuario...">
+            <button class="btn-search" id="btnBuscar">&#128269;</button>
+        </div>
+
+        <div class="add-btn-container">
+            <button class="btn-add" id="btnAgregar">+</button>
+        </div>
+    </div>
+
+    <div class="crud-table-container">
+        <table class="crud-table">
+            <thead>
+                <tr>
+                    <th style="width: 25%;">Apellido y Nombre</th>
+                    <th style="width: 15%;">DNI</th>
+                    <th style="width: 15%;">Rol</th>
+                    <th style="width: 25%;">Carrera</th>
+                    <th style="width: 20%;">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</main>

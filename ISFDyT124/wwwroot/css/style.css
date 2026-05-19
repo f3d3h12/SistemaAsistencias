@@ -1,0 +1,815 @@
+/* =========================================
+   RESETEO Y ESTILOS GENERALES
+   ========================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* =========================================
+   ESTILOS ESPECÍFICOS DE LAS PÁGINAS (BODY)
+   ========================================= */
+.login-page {
+    background-color: #f4f4f4; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.inicio-page {
+    background-color: #f4f4f4;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================================
+   PANTALLA 1: LOGIN
+   ========================================= */
+.login-card {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 380px;
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo-container .logo-img {
+    max-width: 140px;
+}
+
+.login-card .input-group {
+    margin-bottom: 20px;
+}
+
+.login-card .input-group label {
+    display: block;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #000;
+}
+
+.login-card .input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 16px;
+    outline: none;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.login-card .input-group input:focus {
+    border-color: #002e8c;
+}
+
+.btn-submit {
+    background-color: #002e8c;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px;
+    width: 140px;
+    height: 45px;
+    font-size: 24px;
+    cursor: pointer;
+    display: block;
+    margin: 25px auto;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #001a52;
+}
+
+.link-container {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.forgot-password {
+    color: #0000ff;
+    text-decoration: underline;
+    font-size: 15px;
+}
+
+/* =========================================
+   PANTALLA 2: INICIO (ENCABEZADO)
+   ========================================= */
+.top-header {
+    background-color: #d9d9d9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    height: 90px;
+}
+
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.menu-icon .bar {
+    width: 35px;
+    height: 4px;
+    background-color: #002e8c;
+    border-radius: 2px;
+}
+
+.header-title {
+    text-align: left; 
+}
+
+.title-small {
+    font-size: 24px;
+    font-weight: 900; 
+    color: #4a4a4a; 
+    letter-spacing: 8px; 
+    margin-bottom: -5px; 
+}
+
+.title-large {
+    font-size: 32px;
+    font-weight: 900; 
+    color: #001a8c; 
+    letter-spacing: 3px; 
+}
+
+.header-logo .logo-img {
+    height: 60px;
+}
+
+.header-divider {
+    height: 5px;
+    background-color: #002e8c;
+    width: 100%;
+}
+
+/* =========================================
+   PANTALLA 2: INICIO 
+   ========================================= */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    flex-grow: 1;
+    padding-top: 50px;
+}
+
+.tab-inicio {
+    background-color: #b3e5fc;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 40px;
+    border-radius: 20px;
+    margin-bottom: -15px;
+    z-index: 2;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+.form-card {
+    background-color: #ffffff;
+    padding: 50px 60px 40px 60px;
+    border-radius: 25px;
+    box-shadow: 0 60px 90px rgba(0, 0, 0, 0.6);
+    width: 600px;
+    max-width: 90%;
+    z-index: 1;
+}
+
+.form-card .input-group {
+    margin-bottom: 30px;
+}
+
+.form-card .input-group label {
+    display: block;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.custom-select {
+    width: 100%;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    color: #888;
+    background-color: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    outline: none;
+    cursor: pointer;
+    appearance: none; 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.custom-select:focus {
+    box-shadow: 0 4px 15px rgba(0, 46, 140, 0.2);
+}
+
+.btn-siguiente {
+    background-color: #002e8c;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px;
+    width: 200px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    margin: 40px auto 10px auto;
+    transition: background-color 0.3s;
+}
+
+.btn-siguiente:hover {
+    background-color: #001a52;
+}
+
+/* =========================================
+   PANTALLA 3: ASISTENCIA
+   ========================================= */
+.asistencia-page {
+    background-color: #ffffff; 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-container-asistencia {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Banner celeste de información */
+.info-banner {
+    background-color: #cceeff;
+    width: 100%;
+    border-radius: 10px;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.info-banner p {
+    margin: 5px 0;
+    font-size: 16px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2); /* Sombra para que el blanco lea bien */
+}
+
+.info-bold {
+    font-weight: bold;
+    font-size: 18px !important;
+}
+
+.info-col-right {
+    text-align: right;
+}
+
+/* Tabla */
+.table-container {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.attendance-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.attendance-table th, 
+.attendance-table td {
+    border: 2px solid #001a8c; /* Borde azul oscuro */
+    padding: 12px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.attendance-table th {
+    background-color: white;
+    color: #000;
+}
+
+/* Celdas de los checkboxes */
+.modules-cell, 
+.justification-cell {
+    text-align: center !important;
+}
+
+/* Checkboxes */
+.custom-checkbox {
+    width: 28px;
+    height: 28px;
+    appearance: none;
+    -webkit-appearance: none;
+    border: 2px solid #001a8c;
+    border-radius: 6px;
+    background-color: white;
+    cursor: pointer;
+    margin: 0 3px;
+    vertical-align: middle;
+}
+
+
+.custom-checkbox:checked {
+    background-color: #001a8c;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Botón Guardar */
+.btn-guardar {
+    background-color: #001a8c;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 15px 60px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-guardar:hover {
+    background-color: #000d4d;
+}
+
+/* =========================================
+   PANTALLA 4: ASISTENCIA GLOBAL
+   ========================================= */
+.global-page {
+    background-color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-container-global {
+    width: 100%;
+    max-width: 1000px; 
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.global-table-container {
+    width: 100%;
+    overflow-x: auto; 
+    margin-bottom: 30px;
+    padding-bottom: 15px; 
+}
+
+/* Diseño de la barra de desplazamiento inferior */
+.global-table-container::-webkit-scrollbar {
+    height: 8px;
+}
+.global-table-container::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 4px;
+    margin: 0 20%; 
+.global-table-container::-webkit-scrollbar-thumb {
+    background: #001a8c; 
+    border-radius: 4px;
+}
+}
+
+
+.global-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px; 
+}
+
+.global-table th, 
+.global-table td {
+    border: 2px solid #001a8c;
+    padding: 10px 5px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+}
+
+.global-table .align-left {
+    text-align: left;
+    padding-left: 10px;
+}
+
+/* Celdas de los encabezados */
+.global-table .title-cell {
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.global-table .icon-cell {
+    font-size: 18px;
+}
+
+/* Columna de totales  */
+.global-table .total-col {
+    background-color: #001a8c;
+    color: white;
+}
+
+/* =========================================
+   PANTALLA 5: PANEL ADMIN
+   ========================================= */
+.admin-page {
+    background-color: #ffffff; 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Barra horizontal azul */
+.admin-banner {
+    background-color: #001a8c;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 8px 0;
+    width: 100%;
+}
+
+.main-container-admin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; 
+    padding: 40px 20px;
+}
+
+/* Grilla que contiene las tarjetas */
+.cards-grid {
+    display: flex;
+    gap: 40px; /* Espacio entre tarjeta y tarjeta */
+    flex-wrap: wrap; 
+    justify-content: center;
+}
+
+/* Diseño individual de cada tarjeta */
+.admin-card {
+    background-color: #ffffff;
+    border-radius: 30px; 
+    padding: 40px 20px;
+    width: 220px; 
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.15); 
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efecto al pasar el mouse */
+.admin-card:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+}
+
+.card-icon {
+    width: 120px; 
+    height: auto;
+    margin-bottom: 25px;
+}
+
+.admin-card h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+}
+
+/* =========================================
+   PANTALLA 6: GESTIÓN (LISTADO CRUD)
+   ========================================= */
+.gestion-page {
+    background-color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-container-gestion {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- Barra de Herramientas (Buscador y +) --- */
+.toolbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.spacer {
+    flex: 1; 
+}
+
+/* Buscador */
+.search-box {
+    display: flex;
+    align-items: center;
+    border: 2px solid #000; 
+    border-radius: 20px;
+    overflow: hidden; 
+    background-color: white;
+    height: 40px;
+    width: 350px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1), 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.search-box input {
+    flex: 1;
+    border: none;
+    padding: 5px 15px;
+    font-size: 16px;
+    outline: none;
+    background: transparent;
+}
+
+.btn-search {
+    background-color: #e6f7ff; 
+    border: none;
+    border-left: 2px solid #000;
+    width: 50px;
+    height: 100%;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+.btn-search:hover {
+    background-color: #cceeff;
+}
+
+/* Botón Agregar (+) */
+.add-btn-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-add {
+    background-color: #001a8c;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+}
+
+.btn-add:hover {
+    transform: scale(1.1);
+}
+
+/* --- Tabla CRUD --- */
+.crud-table-container {
+    width: 100%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15); 
+}
+
+.crud-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.crud-table th, 
+.crud-table td {
+    border: 3px solid #001a8c; 
+    padding: 12px 10px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    height: 45px; 
+}
+
+.crud-table th {
+    background-color: #b3e5fc; 
+    color: #000;
+}
+
+/* Botones de acción (Editar / Eliminar) */
+.action-cell {
+    display: flex;
+    justify-content: center;
+    gap: 15px; 
+    border: none; 
+    border-bottom: 3px solid #001a8c;
+    border-right: 3px solid #001a8c;
+    height: 100%;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #000;
+    transition: transform 0.2s;
+}
+
+.icon-btn:hover {
+    transform: scale(1.2);
+}
+
+.btn-edit {
+    color: #333;
+}
+
+.btn-delete {
+    color: #333;
+}
+
+/* =========================================
+   PANTALLA 7: AGREGAR ESTUDIANTE
+   ========================================= */
+.agregar-page {
+    background-color: #f4f4f4; 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-container-agregar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 40px 20px;
+}
+
+.form-card-agregar {
+    background-color: #ffffff;
+    padding: 50px 70px;
+    border-radius: 35px; 
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    width: 850px;
+    max-width: 95%;
+}
+
+.form-title {
+    text-align: center;
+    color: #002e8c;
+    font-size: 26px;
+    margin-bottom: 40px;
+    text-decoration: underline; 
+}
+
+/* Grilla para las 2 columnas */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 25px 60px; 
+}
+
+.form-card-agregar .input-group label {
+    display: block;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+/* Cajas de texto con efecto de profundidad */
+.form-card-agregar .input-group input {
+    width: 100%;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    outline: none;
+    box-shadow: inset 0 3px 8px rgba(0,0,0,0.1), 0 2px 5px rgba(0,0,0,0.05); 
+    background-color: #ffffff;
+}
+
+.form-card-agregar .input-group input:focus {
+    box-shadow: inset 0 3px 8px rgba(0, 46, 140, 0.2); 
+}
+
+/* Contenedor del botón centrado */
+.button-container {
+    grid-column: 1 / -1; 
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn-guardar-estudiante {
+    background-color: #001a8c;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 15px 60px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-guardar-estudiante:hover {
+    background-color: #000d4d;
+}
+
+/* =========================================
+   MENÚ LATERAL (SIDEBAR)
+   ========================================= */
+.sidebar {
+    position: fixed;
+    top: 90px; 
+    left: -350px; 
+    width: 320px;
+    height: calc(100vh - 90px); 
+    background-color: #001a52; 
+    transition: left 0.3s ease; 
+    z-index: 1000;
+    box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+}
+
+
+.sidebar.active {
+    left: 0; 
+}
+
+.sidebar-links {
+    list-style: none;
+    padding: 50px 30px;
+}
+
+.sidebar-links li {
+    margin-bottom: 35px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-arrow {
+    color: white; 
+    font-size: 28px;
+    margin-right: 15px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2); 
+}
+
+.sidebar-links a {
+    text-decoration: none;
+    color: white; 
+    font-size: 26px;
+    font-weight: bold;
+    transition: color 0.2s;
+    text-shadow: 2px 2px 4px rgba(0, 46, 140, 0.2);
+}
+
+.sidebar-links a:hover {
+    color: #001a52; 
+}
