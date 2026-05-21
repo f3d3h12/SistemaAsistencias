@@ -1,6 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using ISFDyT124.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
+var connectionString = builder.Configuration.GetConnectionString("ConexionAsistencias");
+
 // Add services to the container.
+builder.Services.AddDbContext<AsistenciaContext>(options =>
+    options.UseSqlServer(connectionString));
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

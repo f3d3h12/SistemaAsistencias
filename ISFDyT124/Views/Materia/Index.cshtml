@@ -1,0 +1,53 @@
+@model IEnumerable<ISFDyT124.Models.Materia>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ma_denominacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ma_modalidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ma_cant_modulos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarrerasMaterias)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(model => item.ma_denominacion)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.ma_modalidad)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.ma_cant_modulos)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.CarrerasMaterias)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ma_id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ma_id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ma_id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
