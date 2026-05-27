@@ -4,18 +4,43 @@ namespace ISFDyT124.Models
 {
     public class Materia
     {
-        [Key]
+         [Key]
+        [Display(Name = "ID Materia")]
         public int ma_id { get; set; }
 
-        [Required]
-        [StringLength(100)]
-        public string ma_denominacion { get; set; }
+    // DENOMINACION
+        [Required(ErrorMessage = "Debe ingresar el nombre de la materia.")]
+        [StringLength(30, ErrorMessage = "No se permiten más de 30 caracteres.")]
+        [RegularExpression(
+            @"^[A-Za-zÁÉÍÓÚáéíóúÜüÑñ0-9\s.,()-]*$",
+            ErrorMessage = "Ingrese una materia válida."
+        )]
+        [Display(Name = "Materia")]
+        public string ma_denominacion { get; set; } = null!;
 
-        [StringLength(50)]
-        public string ma_modalidad { get; set; }
 
+
+        // MODALIDAD
+        [Required(ErrorMessage = "Debe ingresar una modalidad.")]
+        [StringLength(25, ErrorMessage = "No se permiten más de 25 caracteres.")]
+        [RegularExpression(
+            @"^[A-Za-zÁÉÍÓÚáéíóúÜüÑñ\s]*$",
+            ErrorMessage = "Ingrese una modalidad válida."
+        )]
+        [Display(Name = "Modalidad")]
+        public string ma_modalidad { get; set; } = null!;
+
+
+
+        // CANTIDAD MODULOS
+        [Required(ErrorMessage = "Debe ingresar la cantidad de módulos.")]
+        [Range(1, 4, ErrorMessage = "La cantidad de módulos debe estar entre 1 y 4.")]
+        [Display(Name = "Cantidad de Módulos")]
         public int ma_cant_modulos { get; set; }
 
-        public ICollection<CarrerasMaterias>? CarrerasMaterias { get; set; }
+
+
+        // RELACION
+        public virtual ICollection<CarrerasMaterias>? CarrerasMaterias { get; set; }
     }
 }
