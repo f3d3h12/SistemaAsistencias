@@ -38,6 +38,10 @@ namespace ISFDyT124.Models
         public int UsDni { get; set; } // Propiedad para almacenar el DNI del usuario
 
 
+        //DNI
+        [Required]
+        [EmailAddress(ErrorMessage = "Ingrese una dirección de mail válida")]
+        public string? UsEmail {get; set]}
 
         //Relacion de Usuario - Rol
         [ForeignKey("Rol")] // Indica que la propiedad RolId es clave foránea hacia la entidad Rol
