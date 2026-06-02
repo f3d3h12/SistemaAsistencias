@@ -53,7 +53,8 @@ namespace ISFDyT124.Models
 
         public virtual Rol? Rol { get; set; } = null!; // Relaciónes de Usuario a Rol
 
-
-
+        public virtual ICollection<Login> Logins { get; set; } = new List<Login>();
+        public virtual ICollection<UsuarioRol> UsuarioRoles { get; set; } = new List<UsuarioRol>();
+        public virtual ICollection<Asistencia> Asistencias { get; set; } = new List<Asistencia>();
     }
 }

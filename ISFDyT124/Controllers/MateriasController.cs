@@ -6,9 +6,9 @@ using ISFDyT124.Data;
 
 public class MateriasController : Controller
 {
-    private readonly AsistenciaContext _context;
+    private readonly InstitutoDbContext _context;
 
-    public MateriasController(AsistenciaContext context)
+    public MateriasController(InstitutoDbContext context)
     {
         _context = context;
     }

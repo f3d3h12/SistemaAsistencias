@@ -5,9 +5,9 @@ using ISFDyT124.Data;
 
 public class CarrerasController : Controller
 {
-    private readonly AsistenciaContext _context;
+    private readonly InstitutoDbContext _context;
 
-    public CarrerasController(AsistenciaContext context)
+    public CarrerasController(InstitutoDbContext context)
     {
         _context = context;
     }

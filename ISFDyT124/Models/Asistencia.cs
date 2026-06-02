@@ -27,10 +27,10 @@ namespace ISFDyT124.Models
         // Clave foránea que conecta con la a materia
         public int? MaId { get; set; }
 
-        // Conexión hacia el modelo Usuarios.
-        //public virtual Usuarios? Usuario { get; set; } // Por el momento no se utiliza
+        // Conexión hacia el modelo Usuario.
+        public virtual Usuario? Usuario { get; set; }
 
-        // Conexión hacia el modelo Materias.
-        //public virtual Materias? Materias { get; set; } // Por el momento no se utiliza
+        // Conexión hacia el modelo Materia.
+        public virtual Materia? Materia { get; set; }
     }
 }

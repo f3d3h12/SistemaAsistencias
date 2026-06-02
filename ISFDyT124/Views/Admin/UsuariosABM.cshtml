@@ -1,4 +1,5 @@
-﻿@{
+@model IEnumerable<ISFDyT124.Models.Usuario>
+@{
     ViewData["Title"] = "Gestión de Usuarios";
     ViewData["BodyClass"] = "gestion-page";
 }
@@ -17,7 +18,7 @@
         </div>
 
         <div class="add-btn-container">
-            <button class="btn-add" id="btnAgregar">+</button>
+            <a asp-controller="Admin" asp-action="UsuarioAgregar" class="btn-add" id="btnAgregar" style="text-decoration: none; display: flex; align-items: center; justify-content: center;">+</a>
         </div>
     </div>
 
@@ -33,6 +34,29 @@
                 </tr>
             </thead>
             <tbody>
+                @if (Model != null)
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.UsApellido, @item.UsNombre</td>
+                            <td>@item.UsDni</td>
+                            <td>@(item.UsuarioRoles?.FirstOrDefault()?.Rol?.RoDenominacion ?? "Sin Rol")</td>
+                            <td>
+                                @* Aquí podrías mostrar la carrera si estuviera relacionada directamente *@
+                                N/A
+                            </td>
+                            <td>
+                                <div class="action-buttons">
+                                    <a asp-action="UsuarioEditar" asp-route-id="@item.UsId" class="btn-edit">✏️</a>
+                                    <form asp-action="UsuarioEliminar" asp-route-id="@item.UsId" method="post" style="display:inline;" onsubmit="return confirm('¿Está seguro de eliminar este usuario?');">
+                                        <button type="submit" class="btn-delete" style="border:none; background:none; cursor:pointer;">🗑️</button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                }
             </tbody>
         </table>
     </div>

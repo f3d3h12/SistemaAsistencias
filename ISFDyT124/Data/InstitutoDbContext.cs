@@ -41,7 +41,7 @@ namespace ISFDyT124.Models
 
             // Configurar DNI único de la tabla USUARIOS
             modelBuilder.Entity<Usuario>()
-                .HasIndex(u => u.UsDNI)
+                .HasIndex(u => u.UsDni)
                 .IsUnique();
 
             // Configuración de las Relaciones y Claves Foráneas

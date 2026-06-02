@@ -6,19 +6,15 @@ using Microsoft.EntityFrameworkCore; // Importa Entity Framework Core para acces
 
 var builder = WebApplication.CreateBuilder(args); // Crea el constructor del builder de la aplicaci�n web
 
-// Configura la conexi�n a la base de datos SQL Server usando el contexto SiAsContext
-builder.Services.AddDbContext<SiAsContext>(options =>
+// Configura la conexin a la base de datos SQL Server usando el contexto InstitutoDbContext
+builder.Services.AddDbContext<InstitutoDbContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("DBSI")
             ?? throw new InvalidOperationException("Connection string 'DBSI' not found.")
     )
 );
 
-//A�ade el servicio UsuarioDTO con duraci�n por alcance (scoped)
-builder.Services.AddScoped<UsuarioCrearDto>();
-builder.Services.AddScoped<UsuarioDetalleDto>();
-
-// A�ade controladores con vistas para MVC
+// Aade controladores con vistas para MVC
 builder.Services.AddControllersWithViews();
 
 // Configura la autenticaci�n basada en cookies

@@ -1,4 +1,5 @@
-﻿@{
+@model ISFDyT124.Models.Usuario
+@{
     ViewData["Title"] = "Agregar Usuario";
     ViewData["BodyClass"] = "agregar-page";
 }
@@ -11,40 +12,42 @@
     <div class="form-card-agregar">
         <h2 class="form-title"><u>Agregar Usuario</u></h2>
 
-        <form id="formAgregarUsuario" class="form-grid">
+        <form asp-controller="Admin" asp-action="UsuarioAgregar" method="post" id="formAgregarUsuario" class="form-grid">
             <div class="input-group">
-                <label for="apellidos">Apellidos</label>
-                <input type="text" id="apellidos" name="apellidos" required>
+                <label asp-for="UsApellido">Apellidos</label>
+                <input asp-for="UsApellido" required>
+                <span asp-validation-for="UsApellido" class="text-danger"></span>
             </div>
 
             <div class="input-group">
-                <label for="nombres">Nombres</label>
-                <input type="text" id="nombres" name="nombres" required>
+                <label asp-for="UsNombre">Nombres</label>
+                <input asp-for="UsNombre" required>
+                <span asp-validation-for="UsNombre" class="text-danger"></span>
             </div>
 
             <div class="input-group">
-                <label for="dni">DNI</label>
-                <input type="text" id="dni" name="dni" required>
+                <label asp-for="UsDni">DNI</label>
+                <input asp-for="UsDni" required>
+                <span asp-validation-for="UsDni" class="text-danger"></span>
             </div>
 
             <div class="input-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
+                <label asp-for="UsEmail">Email</label>
+                <input asp-for="UsEmail" required>
+                <span asp-validation-for="UsEmail" class="text-danger"></span>
             </div>
 
             <div class="input-group">
-                <label for="rol">Rol del Usuario</label>
-                <select id="rol" name="rol" class="custom-select" required>
+                <label for="selectedRoleId">Rol del Usuario</label>
+                <select id="selectedRoleId" name="selectedRoleId" class="custom-select" required 
+                        asp-items="@(new SelectList(ViewBag.RolesList, "RoId", "RoDenominacion"))">
                     <option value="" disabled selected>Seleccione un Rol</option>
-                    <option value="Estudiante">Estudiante</option>
-                    <option value="Docente">Docente</option>
-                    <option value="Admin">Administrador</option>
                 </select>
             </div>
 
             <div class="input-group">
-                <label for="carrera">Carrera / Área</label>
-                <input type="text" id="carrera" name="carrera">
+                <label for="userPassword">Contraseña</label>
+                <input type="password" id="userPassword" name="userPassword">
             </div>
 
             <div class="button-container">
@@ -53,3 +56,6 @@
         </form>
     </div>
 </main>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

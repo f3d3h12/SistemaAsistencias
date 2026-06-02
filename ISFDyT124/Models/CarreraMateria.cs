@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ISFDyT124.Models
 {
-    public class CarrerasMaterias
+    public class CarreraMateria
     {
         [Key]
         [Display(Name = "ID Relación")]

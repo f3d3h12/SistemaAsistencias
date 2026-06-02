@@ -92,7 +92,7 @@
 //
 //         /// <summary>
 //         /// Acción POST que procesa la creación de un nuevo usuario, su asignación de rol inicial y credenciales opcionales.
-//         /// Respeta las propiedades físicas del esquema SQL (UsId, UsApellido, UsNombre, UsDNI).
+//         /// Respeta las propiedades físicas del esquema SQL (UsId, UsApellido, UsNombre, UsDni).
 //         /// </summary>
 //         [HttpPost]
 //         [ValidateAntiForgeryToken]
@@ -101,10 +101,10 @@
 //             if (ModelState.IsValid)
 //             {
 //                 // Verificar que el DNI no esté duplicado en el sistema
-//                 var dniExiste = await _context.Usuarios.AnyAsync(u => u.UsDNI == usuario.UsDNI);
+//                 var dniExiste = await _context.Usuarios.AnyAsync(u => u.UsDni == usuario.UsDni);
 //                 if (dniExiste)
 //                 {
-//                     ModelState.AddModelError("UsDNI", "El DNI ingresado ya se encuentra registrado.");
+//                     ModelState.AddModelError("UsDni", "El DNI ingresado ya se encuentra registrado.");
 //                     ViewBag.RolesList = await _context.Roles.ToListAsync();
 //                     return View(usuario);
 //                 }
