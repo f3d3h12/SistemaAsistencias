@@ -1,7 +1,7 @@
-@model ISFDyT124.DTO.UsuarioCrearDto
+@model ISFDyT124.DTO.UsuarioDetalleDto
 @{
-    ViewData["Title"] = "Agregar Usuario";
-    ViewData["BodyClass"] = "agregar-page";
+    ViewData["Title"] = "Editar Usuario";
+    ViewData["BodyClass"] = "editar-page";
 }
 
 <div class="admin-banner">
@@ -10,9 +10,11 @@
 
 <main class="main-container-agregar">
     <div class="form-card-agregar">
-        <h2 class="form-title"><u>Agregar Usuario</u></h2>
+        <h2 class="form-title"><u>Editar Usuario</u></h2>
 
-        <form asp-controller="Admin" asp-action="UsuarioAgregar" method="post" id="formAgregarUsuario" class="form-grid">
+        <form asp-controller="Admin" asp-action="UsuarioEditar" method="post" id="formEditarUsuario" class="form-grid">
+            <input type="hidden" asp-for="UsId" />
+
             <div class="input-group">
                 <label asp-for="UsApellido">Apellidos</label>
                 <input asp-for="UsApellido" required>
@@ -39,15 +41,9 @@
 
             <div class="input-group">
                 <label for="selectedRoleId">Rol del Usuario</label>
-                <select id="selectedRoleId" name="selectedRoleId" class="custom-select" required 
-                        asp-items="@(new SelectList(ViewBag.RolesList, "RoId", "RoDenominacion"))">
-                    <option value="" disabled selected>Seleccione un Rol</option>
+                <select id="selectedRoleId" name="selectedRoleId" class="custom-select" required asp-items="@(new SelectList(ViewBag.RolesList, "RoId", "RoDenominacion"))">
+                    <option value="" disabled>Seleccione un Rol</option>
                 </select>
-            </div>
-
-            <div class="input-group">
-                <label for="userPassword">Contraseña</label>
-                <input type="password" id="userPassword" name="userPassword">
             </div>
 
             <div class="button-container">

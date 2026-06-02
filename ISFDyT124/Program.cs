@@ -1,5 +1,5 @@
 
-using ISFDyT124.Data;
+using ISFDyT124.Data; // Importa el espacio de nombres para el contexto de la base de datos
 using Microsoft.EntityFrameworkCore; // Importa Entity Framework Core para acceso a base de datos
 
 //using ISFDyT124.DTOs; // Importa objetos de transferencia de datos

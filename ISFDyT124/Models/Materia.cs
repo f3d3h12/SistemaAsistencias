@@ -23,6 +23,8 @@ namespace ISFDyT124.Models
             @"^[A-Za-zÁÉÍÓÚáéíóúÜüÑñ\s]*$",
             ErrorMessage = "Ingrese una modalidad válida."
         )]
+
+
         [Display(Name = "Modalidad")]
         public string? MaModalidad { get; set; }
 

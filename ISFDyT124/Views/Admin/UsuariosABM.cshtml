@@ -1,4 +1,4 @@
-@model IEnumerable<ISFDyT124.Models.Usuario>
+@model IEnumerable<ISFDyT124.DTO.UsuarioDetalleDto>
 @{
     ViewData["Title"] = "Gestión de Usuarios";
     ViewData["BodyClass"] = "gestion-page";
@@ -41,7 +41,7 @@
                         <tr>
                             <td>@item.UsApellido, @item.UsNombre</td>
                             <td>@item.UsDni</td>
-                            <td>@(item.UsuarioRoles?.FirstOrDefault()?.Rol?.RoDenominacion ?? "Sin Rol")</td>
+                            <td>@(item.RoDenominacion ?? "Sin Rol")</td>
                             <td>
                                 @* Aquí podrías mostrar la carrera si estuviera relacionada directamente *@
                                 N/A

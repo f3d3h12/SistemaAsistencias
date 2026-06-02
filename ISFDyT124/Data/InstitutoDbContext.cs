@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages;
 using System.Drawing.Drawing2D;
+using ISFDyT124.Models;
 
-namespace ISFDyT124.Models
+namespace ISFDyT124.Data
 {
     public class InstitutoDbContext : DbContext
     {
