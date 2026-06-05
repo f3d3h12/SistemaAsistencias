@@ -26,11 +26,12 @@
         <table class="crud-table">
             <thead>
                 <tr>
-                    <th style="width: 25%;">Apellido y Nombre</th>
-                    <th style="width: 15%;">DNI</th>
-                    <th style="width: 15%;">Rol</th>
-                    <th style="width: 25%;">Carrera</th>
-                    <th style="width: 20%;">Acciones</th>
+                    <th style="width: 20%;">Apellido y Nombre</th>
+                    <th style="width: 10%;">DNI</th>
+                    <th style="width: 10%;">Rol</th>
+                    <th style="width: 25%;">Carrera / Cohorte</th>
+                    <th style="width: 25%;">Materias</th>
+                    <th style="width: 10%;">Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -42,10 +43,8 @@
                             <td>@item.UsApellido, @item.UsNombre</td>
                             <td>@item.UsDni</td>
                             <td>@(item.RoDenominacion ?? "Sin Rol")</td>
-                            <td>
-                                @* Aquí podrías mostrar la carrera si estuviera relacionada directamente *@
-                                N/A
-                            </td>
+                            <td>@(item.CarreraCohorteDenominacion ?? "-")</td>
+                            <td style="font-size:0.85em;">@(item.MateriasDenominacion ?? "-")</td>
                             <td>
                                 <div class="action-buttons">
                                     <a asp-action="UsuarioEditar" asp-route-id="@item.UsId" class="btn-edit">✏️</a>

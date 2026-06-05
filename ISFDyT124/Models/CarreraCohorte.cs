@@ -16,5 +16,7 @@ namespace ISFDyT124.Models
 
         [ForeignKey("CoId")]
         public virtual Cohorte Cohorte { get; set; } = null!;
+
+        public virtual ICollection<Usuario> Usuarios { get; set; } = new List<Usuario>();
     }
 }

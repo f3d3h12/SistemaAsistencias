@@ -30,6 +30,7 @@ namespace ISFDyT124.Controllers
                 return View(model);
 
             var usuario = await _context.Usuarios
+                .Include(u => u.Rol)
                 .FirstOrDefaultAsync(u => u.UsEmail == model.Usuario);
 
             if (usuario == null || usuario.UsContrasena != model.Contrasena)
@@ -43,6 +44,7 @@ namespace ISFDyT124.Controllers
                 new Claim(ClaimTypes.NameIdentifier, usuario.UsId.ToString()),
                 new Claim(ClaimTypes.Name, $"{usuario.UsNombre} {usuario.UsApellido}"),
                 new Claim(ClaimTypes.Email, usuario.UsEmail ?? ""),
+                new Claim(ClaimTypes.Role, usuario.Rol?.RoDenominacion ?? ""),
             };
 
             var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);

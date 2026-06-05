@@ -47,6 +47,12 @@ using (var scope = app.Services.CreateScope())
         context.Roles.Add(rolAdmin);
     }
 
+    if (!await context.Roles.AnyAsync(r => r.RoDenominacion == "Profesor"))
+        context.Roles.Add(new Rol { RoId = 2, RoDenominacion = "Profesor" });
+
+    if (!await context.Roles.AnyAsync(r => r.RoDenominacion == "Alumno"))
+        context.Roles.Add(new Rol { RoId = 3, RoDenominacion = "Alumno" });
+
     if (!await context.Usuarios.AnyAsync(u => u.UsEmail == "admin@instituto.edu.ar"))
     {
         context.Usuarios.Add(new Usuario

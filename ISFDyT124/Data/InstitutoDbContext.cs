@@ -83,6 +83,19 @@ namespace ISFDyT124.Data
                 .HasForeignKey(cm => cm.MaId)
                 .OnDelete(DeleteBehavior.Cascade);
 
+            // Relación USUARIOS -> CARRERAS_COHORTES (solo Alumnos)
+            modelBuilder.Entity<Usuario>()
+                .HasOne(u => u.CarreraCohorte)
+                .WithMany(cc => cc.Usuarios)
+                .HasForeignKey(u => u.CaCoId)
+                .OnDelete(DeleteBehavior.SetNull);
+
+            // Relación M:N USUARIOS (Profesores) <-> CARRERAS_MATERIAS
+            modelBuilder.Entity<Usuario>()
+                .HasMany(u => u.CarreraMaterias)
+                .WithMany(m => m.Usuarios)
+                .UsingEntity(j => j.ToTable("UsuarioCarreraMateria"));
+
             // Relación ASISTENCIAS -> USUARIOS (Alumno) y MATERIAS
             modelBuilder.Entity<Asistencia>()
                 .HasOne(a => a.Usuario)

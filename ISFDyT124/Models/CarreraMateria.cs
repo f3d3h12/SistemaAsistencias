@@ -28,5 +28,7 @@ namespace ISFDyT124.Models
 
 
         public virtual Materia? Materia { get; set; }
+
+        public virtual ICollection<Usuario> Usuarios { get; set; } = new List<Usuario>();
     }
 }

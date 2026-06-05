@@ -54,11 +54,17 @@ namespace ISFDyT124.Models
         [Display(Name = "Rol")] // Etiqueta para vistas 
         public int RoId { get; set; } // Clave foránea al rol del usuario
 
+        // CarreraCohorte asignado (solo para Alumnos)
+        [Display(Name = "Carrera / Cohorte")]
+        public int? CaCoId { get; set; }
+
 
 
         public virtual Rol? Rol { get; set; } = null!; // Relaciónes de Usuario a Rol
+        public virtual CarreraCohorte? CarreraCohorte { get; set; }
 
         public virtual ICollection<UsuarioRol> UsuarioRoles { get; set; } = new List<UsuarioRol>();
         public virtual ICollection<Asistencia> Asistencias { get; set; } = new List<Asistencia>();
+        public virtual ICollection<CarreraMateria> CarreraMaterias { get; set; } = new List<CarreraMateria>();
     }
 }

@@ -39,9 +39,30 @@
 
             <div class="input-group">
                 <label for="selectedRoleId">Rol del Usuario</label>
-                <select id="selectedRoleId" name="selectedRoleId" class="custom-select" required 
+                <select id="selectedRoleId" name="selectedRoleId" class="custom-select" required
                         asp-items="@(new SelectList(ViewBag.RolesList, "RoId", "RoDenominacion"))">
                     <option value="" disabled selected>Seleccione un Rol</option>
+                </select>
+            </div>
+
+            <div id="carreraCohorteGroup" class="input-group" style="display:none;">
+                <label asp-for="CaCoId">Carrera / Cohorte</label>
+                <select asp-for="CaCoId" class="custom-select">
+                    <option value="">Seleccione Carrera / Cohorte</option>
+                    @foreach (var cc in ViewBag.CarreraCohortesList)
+                    {
+                        <option value="@cc.CaCoId">@cc.Denominacion</option>
+                    }
+                </select>
+            </div>
+
+            <div id="materiasGroup" class="input-group" style="display:none;">
+                <label>Materias Asignadas</label>
+                <select name="SelectedCaMaIds" multiple class="custom-select" style="height:150px;">
+                    @foreach (var cm in ViewBag.CarreraMateriasList)
+                    {
+                        <option value="@cm.CaMaId">@cm.Denominacion</option>
+                    }
                 </select>
             </div>
 
@@ -56,6 +77,14 @@
         </form>
     </div>
 </main>
+
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        document.getElementById('selectedRoleId').addEventListener('change', function() {
+            var val = parseInt(this.value);
+            document.getElementById('carreraCohorteGroup').style.display = (val === 3) ? 'block' : 'none';
+            document.getElementById('materiasGroup').style.display = (val === 2) ? 'block' : 'none';
+        });
+    </script>
 }
