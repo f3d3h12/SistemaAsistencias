@@ -1,10 +1,12 @@
 using ISFDyT124.Data;
 using ISFDyT124.DTO;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace ISFDyT124.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly InstitutoDbContext _context;

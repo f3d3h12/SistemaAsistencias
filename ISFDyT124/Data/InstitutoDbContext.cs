@@ -15,7 +15,6 @@ namespace ISFDyT124.Data
         public DbSet<Rol> Roles { get; set; } = null!;
         public DbSet<Usuario> Usuarios { get; set; } = null!;
         public DbSet<UsuarioRol> UsuarioRoles { get; set; } = null!;
-        public DbSet<Login> Logins { get; set; } = null!;
         public DbSet<Materia> Materias { get; set; } = null!;
         public DbSet<Carrera> Carreras { get; set; } = null!;
         public DbSet<Cohorte> Cohortes { get; set; } = null!;
@@ -31,7 +30,6 @@ namespace ISFDyT124.Data
             modelBuilder.Entity<Rol>().Property(r => r.RoId).ValueGeneratedNever();
             modelBuilder.Entity<Usuario>().Property(u => u.UsId).ValueGeneratedNever();
             modelBuilder.Entity<UsuarioRol>().Property(ur => ur.UsRoId).ValueGeneratedNever();
-            modelBuilder.Entity<Login>().Property(l => l.LoId).ValueGeneratedNever();
             modelBuilder.Entity<Materia>().Property(m => m.MaId).ValueGeneratedNever();
             modelBuilder.Entity<Carrera>().Property(c => c.CaId).ValueGeneratedNever();
             modelBuilder.Entity<Cohorte>().Property(co => co.CoId).ValueGeneratedNever();
@@ -46,13 +44,6 @@ namespace ISFDyT124.Data
 
             // Configuración de las Relaciones y Claves Foráneas
 
-            // Relación LOGIN -> USUARIO (Uno a Uno / Muchos a Uno, según esquema de base de datos)
-            modelBuilder.Entity<Login>()
-                .HasOne(l => l.Usuario)
-                .WithMany(u => u.Logins)
-                .HasForeignKey(l => l.LoUser)
-                .OnDelete(DeleteBehavior.Cascade);
-
             // Relación USUARIOS_ROLES -> USUARIOS y ROLES
             modelBuilder.Entity<UsuarioRol>()
                 .HasOne(ur => ur.Usuario)
@@ -64,7 +55,7 @@ namespace ISFDyT124.Data
                 .HasOne(ur => ur.Rol)
                 .WithMany(r => r.UsuarioRoles)
                 .HasForeignKey(ur => ur.RoId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Restrict);
 
             // Relación CARRERAS_COHORTES -> CARRERAS y COHORTE
             modelBuilder.Entity<CarreraCohorte>()
