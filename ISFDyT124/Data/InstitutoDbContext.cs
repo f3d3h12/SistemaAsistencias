@@ -22,6 +22,7 @@ namespace ISFDyT124.Models
         public DbSet<Asistencia> Asistencias { get; set; } = null!;
         //public DbSet<CarreraCohorte> CarreraCohortes { get; set; } = null!;
         public DbSet<CarrerasMaterias> CarrerasMaterias { get; set; } = null!;
+        public DbSet<Inscripciones> Inscripciones { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
